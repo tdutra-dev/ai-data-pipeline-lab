@@ -59,9 +59,12 @@ def generate_ai_summary(**context: dict) -> None:
         insights = response.json()
 
         logger.info("─── AI Insights Summary ─────────────────────────────")
-        logger.info("Anomaly summary : %s", insights.get("anomaly_summary", "—"))
-        logger.info("Risk explanation: %s", insights.get("risk_explanation", "—"))
-        logger.info("Operational     : %s", insights.get("operational_insight", "—"))
+        logger.info("Anomaly summary : %s",
+                    insights.get("anomaly_summary", "—"))
+        logger.info("Risk explanation: %s",
+                    insights.get("risk_explanation", "—"))
+        logger.info("Operational     : %s", insights.get(
+            "operational_insight", "—"))
         logger.info("────────────────────────────────────────────────────")
 
     except requests.exceptions.ConnectionError:
