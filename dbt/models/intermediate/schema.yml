@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: int_trading_volume
+    description: >
+      Daily trading volume aggregated by instrument.
+      Joins stg_trades (filled only) with stg_instruments.
+    columns:
+      - name: trade_date
+        tests: [not_null]
+      - name: instrument_id
+        tests: [not_null]
+      - name: total_trades
+        tests: [not_null]
+
+  - name: int_customer_activity
+    description: >
+      Per-user activity summary across all filled trades.
+      Joins stg_trades, stg_users, and stg_transactions.
+    columns:
+      - name: user_id
+        tests: [not_null, unique]
+      - name: total_trades
+        tests: [not_null]

@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: mart_customer_activity
+    description: >
+      Production-grade customer trading activity mart.
+      Materialised as a TABLE for BI and AI consumption.
+      Combines trade activity, fees, deposits, and risk event count.
+    columns:
+      - name: user_id
+        tests: [not_null, unique]
+      - name: total_trades
+        tests: [not_null]
+      - name: total_notional
+        tests: [not_null]
+      - name: customer_segment
+        tests:
+          - not_null
+          - accepted_values:
+              values: [whale, high_value, active, light]
+
+  - name: mart_risk_signals
+    description: >
+      Aggregated risk signals per user with a computed risk_tier and risk_score.
+      Primary input for the AI insights and compliance dashboard.
+    columns:
+      - name: user_id
+        tests: [not_null, unique]
+      - name: risk_tier
+        tests:
+          - not_null
+          - accepted_values:
+              values: [critical, elevated, moderate, low]
+      - name: risk_score
+        tests: [not_null]

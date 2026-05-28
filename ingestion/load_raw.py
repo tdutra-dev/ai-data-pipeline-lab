@@ -86,6 +86,7 @@ TRUNCATE TABLE
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
 
+
 def get_connection():
     return psycopg2.connect(DATABASE_URL)
 

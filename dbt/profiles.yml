@@ -1,0 +1,23 @@
+trading_pipeline:
+  target: prod
+  outputs:
+    prod:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST', 'postgres') }}"
+      user: "{{ env_var('POSTGRES_USER', 'trading') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD', 'trading') }}"
+      port: "{{ env_var('POSTGRES_PORT', '5432') | int }}"
+      dbname: "{{ env_var('POSTGRES_DB', 'trading') }}"
+      schema: public          # fallback – overridden per model by dbt_project.yml
+      threads: 4
+      connect_timeout: 30
+    # ── Local dev (run dbt outside Docker) ───────────────────────────────────
+    dev:
+      type: postgres
+      host: localhost
+      user: trading
+      password: trading
+      port: 5432
+      dbname: trading
+      schema: public
+      threads: 2

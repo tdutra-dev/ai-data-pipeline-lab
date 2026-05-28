@@ -1,0 +1,76 @@
+version: 2
+
+sources:
+  - name: trading_raw
+    description: >
+      Raw tables loaded by the ingestion script from CSV files.
+      All data lives in the `raw` schema of the `trading` database.
+    database: trading
+    schema: raw
+    tables:
+      - name: raw_trades
+        description: One row per executed, pending or cancelled trade order.
+        columns:
+          - name: trade_id
+            description: Unique trade identifier.
+            tests: [not_null, unique]
+          - name: user_id
+            description: Foreign key → raw_users.user_id.
+            tests: [not_null]
+          - name: instrument_id
+            description: Foreign key → raw_instruments.instrument_id.
+            tests: [not_null]
+          - name: trade_type
+            tests:
+              - not_null
+              - accepted_values:
+                  values: [buy, sell]
+          - name: status
+            tests:
+              - not_null
+              - accepted_values:
+                  values: [filled, pending, cancelled]
+
+      - name: raw_users
+        description: Trading platform users.
+        columns:
+          - name: user_id
+            tests: [not_null, unique]
+          - name: account_type
+            tests:
+              - accepted_values:
+                  values: [standard, premium, institutional]
+          - name: risk_profile
+            tests:
+              - accepted_values:
+                  values: [low, moderate, high]
+
+      - name: raw_instruments
+        description: Tradeable financial instruments.
+        columns:
+          - name: instrument_id
+            tests: [not_null, unique]
+          - name: instrument_type
+            tests:
+              - accepted_values:
+                  values: [equity, forex, crypto, etf, commodity]
+
+      - name: raw_transactions
+        description: Financial transactions linked to trades and direct deposits.
+        columns:
+          - name: transaction_id
+            tests: [not_null, unique]
+          - name: transaction_type
+            tests:
+              - accepted_values:
+                  values: [trade_settlement, deposit, withdrawal, fee]
+
+      - name: raw_risk_events
+        description: Compliance and risk monitoring events.
+        columns:
+          - name: event_id
+            tests: [not_null, unique]
+          - name: severity
+            tests:
+              - accepted_values:
+                  values: [low, medium, high]

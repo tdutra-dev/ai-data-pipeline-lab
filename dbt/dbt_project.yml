@@ -1,0 +1,32 @@
+name: trading_pipeline
+version: "1.0.0"
+config-version: 2
+
+profile: trading_pipeline
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+analysis-paths: ["analyses"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - target
+  - dbt_packages
+
+# ─── Model materialisation & schema config ───────────────────────────────────
+# Custom generate_schema_name macro (see macros/) removes the target-schema
+# prefix so schemas are simply: staging | intermediate | marts
+models:
+  trading_pipeline:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts
