@@ -1,0 +1,21 @@
+event_id,user_id,trade_id,event_type,severity,event_timestamp,description
+RE001,U006,T009,large_position,high,2026-01-08 15:05:00,Crypto position exceeds 10% of portfolio threshold
+RE002,U010,T013,concentration_risk,medium,2026-01-13 09:35:00,Over 30% of portfolio allocated to commodities
+RE003,U003,T015,pnl_threshold,high,2026-01-20 16:10:00,Realised PnL exceeds 5% daily gain threshold - compliance review
+RE004,U006,T017,rapid_trading,medium,2026-01-23 11:05:00,3 large crypto trades within 72 hours
+RE005,U010,T020,large_position,high,2026-02-01 10:10:00,BTC position size exceeds single-asset limit
+RE006,U003,T024,volatility_alert,medium,2026-02-10 15:35:00,ETH position opened during high-volatility window
+RE007,U006,T026,concentration_risk,high,2026-02-14 12:10:00,Crypto allocation exceeds 50% of total portfolio
+RE008,U010,T027,unusual_pattern,low,2026-02-15 14:10:00,Gold position partially closed 2 days after opening
+RE009,U007,T038,large_position,medium,2026-03-18 11:10:00,BTC exposure increase - first crypto entry for this user
+RE010,U006,T036,rapid_trading,high,2026-03-12 15:10:00,Large sell immediately following large buy in same asset class
+RE011,U003,T043,compliance_flag,high,2026-04-05 11:05:00,Pending large BTC order - manual compliance review required
+RE012,U010,T047,concentration_risk,medium,2026-04-14 11:10:00,ETH position size increase - approaching limit
+RE013,U001,T031,volatility_alert,low,2026-03-01 11:10:00,First crypto position opened - profile mismatch flagged
+RE014,U006,,rapid_trading,high,2026-04-20 09:00:00,Systematic pattern of large crypto buys detected across sessions
+RE015,U003,,compliance_flag,high,2026-04-22 14:00:00,Multiple high-value pending orders under compliance review
+RE016,U010,,market_manipulation,medium,2026-05-01 10:00:00,Coordinated buy pattern detected across multiple asset classes
+RE017,U007,T038,position_limit,medium,2026-03-18 11:15:00,BTC exposure approaching regulatory position limit
+RE018,U002,T030,unusual_pattern,low,2026-02-20 09:40:00,First equity purchase after forex-only trading history
+RE019,U009,T034,currency_risk,low,2026-03-06 14:10:00,Large GBP/USD position opened during announced volatility window
+RE020,U004,T039,position_limit,low,2026-03-20 09:40:00,TSLA position size flagged for periodic review

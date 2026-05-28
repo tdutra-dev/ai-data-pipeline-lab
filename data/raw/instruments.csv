@@ -1,0 +1,11 @@
+instrument_id,symbol,name,instrument_type,currency
+I001,AAPL,Apple Inc.,equity,USD
+I002,GOOGL,Alphabet Inc.,equity,USD
+I003,EUR/USD,Euro vs US Dollar,forex,USD
+I004,BTC/USD,Bitcoin vs US Dollar,crypto,USD
+I005,ETH/USD,Ethereum vs US Dollar,crypto,USD
+I006,NVDA,NVIDIA Corporation,equity,USD
+I007,GBP/USD,British Pound vs US Dollar,forex,USD
+I008,TSLA,Tesla Inc.,equity,USD
+I009,SPY,SPDR S&P 500 ETF,etf,USD
+I010,GOLD/USD,Gold Spot Price,commodity,USD

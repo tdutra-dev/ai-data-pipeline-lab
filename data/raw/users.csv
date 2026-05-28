@@ -1,0 +1,11 @@
+user_id,name,email,country,account_type,risk_profile,created_at
+U001,Marco Rossi,marco.rossi@example.com,IT,premium,moderate,2024-01-15 00:00:00
+U002,Sofia Bianchi,sofia.bianchi@example.com,IT,standard,low,2024-02-20 00:00:00
+U003,James Wilson,james.wilson@example.com,GB,premium,high,2024-01-10 00:00:00
+U004,Emma Mueller,emma.mueller@example.com,DE,standard,moderate,2024-03-05 00:00:00
+U005,Luca Ferrari,luca.ferrari@example.com,IT,institutional,moderate,2023-11-01 00:00:00
+U006,Amara Okafor,amara.okafor@example.com,NG,standard,high,2024-04-12 00:00:00
+U007,Carlos Silva,carlos.silva@example.com,BR,premium,moderate,2024-01-28 00:00:00
+U008,Yuki Tanaka,yuki.tanaka@example.com,JP,institutional,low,2023-09-15 00:00:00
+U009,Claire Dupont,claire.dupont@example.com,FR,standard,moderate,2024-05-01 00:00:00
+U010,Ahmed Hassan,ahmed.hassan@example.com,AE,premium,high,2024-02-14 00:00:00
